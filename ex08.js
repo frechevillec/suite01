@@ -31,3 +31,30 @@ isAllEven([4, 4, 6, 8, 10, 12]);
 
 //  écrire votre code sous ce commentaire
 
+function isEven(nb){
+
+    if(nb % 2 === 0){
+        return "pair";
+    } else {
+        return "impair";
+    }
+}
+
+function isAllEven (tabNb){
+
+    let tabResult = [];
+    let resultat = 0;
+
+    for (let i = 0; i < tabNb.length; i++){
+        tabResult.push(isEven(tabNb[i]));
+    }
+
+    for (let i = 0; i < tabResult.length; i++){
+        resultat = tabResult[i] === "impair" ? 0 : 1;
+    }
+
+    return resultat;
+}
+
+console.log(isAllEven([4, 5, 6, 7])); 
+console.log(isAllEven([4, 4, 6, 8, 10, 12]));
